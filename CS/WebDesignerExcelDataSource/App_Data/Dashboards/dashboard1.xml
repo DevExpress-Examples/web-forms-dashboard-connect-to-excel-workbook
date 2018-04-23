@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard>
+  <Title Text="New Dashboard" />
+  <DataSources>
+    <ExcelDataSource Name="Excel Data Source" FileName="D:\Projects\Code Central\16.1\Web Designer\Excel Data Source\CS\WebDesignerExcelDataSource\App_Data\ExcelDataSource.xlsx" ComponentName="excelDataSource1">
+      <Options Type="DevExpress.DataAccess.Excel.ExcelSourceOptions" SkipEmptyRows="true" UseFirstRowAsHeader="true" SkipHiddenColumns="true" SkipHiddenRows="true">
+        <ImportSettings Type="DevExpress.DataAccess.Excel.ExcelWorksheetSettings" WorksheetName="SalesPerson" CellRange="A1:L2000" />
+      </Options>
+      <Schema>
+        <FieldInfo Name="OrderID" Type="System.Double" Selected="false" />
+        <FieldInfo Name="Country" Type="System.String" Selected="true" />
+        <FieldInfo Name="FirstName" Type="System.String" Selected="false" />
+        <FieldInfo Name="LastName" Type="System.String" Selected="false" />
+        <FieldInfo Name="ProductName" Type="System.String" Selected="true" />
+        <FieldInfo Name="CategoryName" Type="System.String" Selected="true" />
+        <FieldInfo Name="OrderDate" Type="System.DateTime" Selected="false" />
+        <FieldInfo Name="UnitPrice" Type="System.Double" Selected="false" />
+        <FieldInfo Name="Quantity" Type="System.Double" Selected="true" />
+        <FieldInfo Name="Discount" Type="System.Double" Selected="false" />
+        <FieldInfo Name="Extended Price" Type="System.Double" Selected="true" />
+        <FieldInfo Name="Sales Person" Type="System.String" Selected="false" />
+      </Schema>
+      <ResultSchema />
+    </ExcelDataSource>
+  </DataSources>
+  <Items>
+    <Pivot ComponentName="pivotDashboardItem1" Name="Pivot 1" DataSource="excelDataSource1">
+      <DataItems>
+        <Measure DataMember="Extended Price" UniqueName="DataItem0" />
+        <Measure DataMember="Quantity" UniqueName="DataItem1" />
+        <Dimension DataMember="Country" UniqueName="DataItem2" />
+        <Dimension DataMember="CategoryName" UniqueName="DataItem3" />
+        <Dimension DataMember="ProductName" UniqueName="DataItem4" />
+      </DataItems>
+      <Columns>
+        <Column UniqueName="DataItem2" />
+      </Columns>
+      <Rows>
+        <Row UniqueName="DataItem3" />
+        <Row UniqueName="DataItem4" />
+      </Rows>
+      <Values>
+        <Value UniqueName="DataItem0" />
+        <Value UniqueName="DataItem1" />
+      </Values>
+    </Pivot>
+    <Chart ComponentName="chartDashboardItem1" Name="Chart 1" DataSource="excelDataSource1">
+      <DataItems>
+        <Measure DataMember="Extended Price" UniqueName="DataItem0" />
+        <Dimension DataMember="CategoryName" UniqueName="DataItem1" />
+        <Dimension DataMember="Country" UniqueName="DataItem2" />
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension UniqueName="DataItem2" />
+      </SeriesDimensions>
+      <Arguments>
+        <Argument UniqueName="DataItem1" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple>
+              <Value UniqueName="DataItem0" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+    <Card ComponentName="cardDashboardItem1" Name="Card 1" DataSource="excelDataSource1">
+      <DataItems>
+        <Measure DataMember="Extended Price" UniqueName="DataItem0" />
+        <Dimension DataMember="Country" UniqueName="DataItem1" />
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension UniqueName="DataItem1" />
+      </SeriesDimensions>
+      <Card>
+        <ActualValue UniqueName="DataItem0" />
+      </Card>
+    </Card>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup>
+      <LayoutGroup Orientation="Vertical">
+        <LayoutItem DashboardItem="pivotDashboardItem1" Weight="122.5287356321839" />
+        <LayoutItem DashboardItem="cardDashboardItem1" Weight="77.4712643678161" />
+      </LayoutGroup>
+      <LayoutItem DashboardItem="chartDashboardItem1" />
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>
