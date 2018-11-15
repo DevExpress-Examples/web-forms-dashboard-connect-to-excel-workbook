@@ -1,3 +1,8 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [Global.asax.cs](./CS/WebDesignerExcelDataSource/Global.asax.cs) (VB: [Global.asax.vb](./VB/WebDesignerExcelDataSource/Global.asax.vb))
+<!-- default file list end -->
 # ASPxDashboard - How to connect the Web Dashboard to an Excel workbook
 
 
