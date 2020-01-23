@@ -2,7 +2,7 @@
 <Dashboard>
   <Title Text="New Dashboard" />
   <DataSources>
-    <ExcelDataSource Name="Excel Data Source" FileName="D:\Projects\Code Central\16.1\Web Designer\Excel Data Source\CS\WebDesignerExcelDataSource\App_Data\ExcelDataSource.xlsx" ComponentName="excelDataSource1">
+    <ExcelDataSource Name="Excel Data Source" FileName="ExcelDataSource.xlsx" ComponentName="excelDataSource1">
       <Options Type="DevExpress.DataAccess.Excel.ExcelSourceOptions" SkipEmptyRows="true" UseFirstRowAsHeader="true" SkipHiddenColumns="true" SkipHiddenRows="true">
         <ImportSettings Type="DevExpress.DataAccess.Excel.ExcelWorksheetSettings" WorksheetName="SalesPerson" CellRange="A1:L2000" />
       </Options>
